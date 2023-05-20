@@ -1,22 +1,14 @@
-const dbconnect=require('./mongobc');
-const insert=async()=>{
-  const data= await dbconnect();
-  const ins=await data.insertMany([{
-    name:"bikram1",
-    pirce:1111111111,
-    brand:"well developer"
-  },{
-    name:"bikram2",
-    pirce:1111111111,
-    brand:"well developer"
-  },
-  {
-    name:"bikram3",
-    pirce:1111111111,
-    brand:"well developer"
-  }]);
-  if(ins.acknowledged){
-    console.log("inserted value")
+const dbconnect=require('./mongodb')
+
+const insert=async(data)=>{
+ const db=await data 
+
+  const result= await db.insertOne( {name: 'bikraadfa 0',
+  pirce: 1111111111,
+  brand: 'well developer'})
+  if(result.acknowledged==true){
+    console.log("data is inserted")
   }
+// console.log(result)
 }
-insert()
+insert(dbconnect())
