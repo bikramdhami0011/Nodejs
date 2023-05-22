@@ -1,6 +1,15 @@
-const os=require('os')
-console.log(os.freemem()/(1024*1024*1024))
-console.log(os.totalmem()/(1024*1024*1024))
-console.log(os.hostname())
-console.log(os.platform())
-console.log(os.userInfo())
+
+const express=require('express')
+const fs=require('fs')
+const path =require('path')
+
+const a=path.join(__dirname,'hello')
+
+const app=express();
+app.use(express.static(a))
+
+app.get('',(req,resp)=>{
+    resp.send(a)
+})
+app.listen(3000)
+
