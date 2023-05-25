@@ -9,7 +9,7 @@ const app=express();
 app.use(express.static(a))
 
 app.get('',(req,resp)=>{
-    resp.send(a)
+    
 })
 app.listen(3000)
 

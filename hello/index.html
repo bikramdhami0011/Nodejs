@@ -12,21 +12,22 @@
         <img id="img" height="100px"
         width="200px" >
         <h1 id="h1"></h1>
-         <button id="btn" onclick="fun()" >clickme
-        </button>
+        <form  id="form" onsubmit="" method="post" >
+            <!-- <button id="btn" type="text">clickme</button>   \                 -->
+          <input type="text" name="" id="input">
+        </form>
 
     </div>
     <script>
-        // function fun(){
-        // 
-
-        // }
-     const fun=()=>{
-        setInterval(() => {
-            document.getElementById("img").style.background= `${"#"+(Math.floor (Math.random()*1000000))}`;
-            //
-        },100);
-     }
+      document.querySelector("form").addEventListener("submit",submit)
+  function submit(event) {
+   console.log(event.value)
+  event.preventDefault();
+//   this.event=search.value
+   
+//    console.log(event.target.value)
+  
+  }
     </script>
 </body>
 </html>
